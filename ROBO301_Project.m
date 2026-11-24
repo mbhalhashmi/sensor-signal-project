@@ -140,7 +140,7 @@ disp(samplingTable);
 figure('Name','C: Sampling and aliasing');
 
 subplot(2,1,1);
-plot(tFine, xFine, 'k');
+plot(tFine, xFine, 'y');
 hold on;
 show = t <= 2*T0;
 stem(t(show), x(show), 'b.', 'MarkerSize', 4);
@@ -151,7 +151,7 @@ title(sprintf('Valid sampling: Fs = %g Hz > 2 fmax', Fs));
 legend('Clean continuous-time model','Samples');
 
 subplot(2,1,2);
-plot(tFine, xFine, 'k');
+plot(tFine, xFine, 'y');
 hold on;
 stem(tAlias, xAlias, 'r', 'filled');
 grid on;
@@ -187,7 +187,7 @@ xMeasured = x + noise; % Noisy signal
 figure('Name','B: Noise and noisy measurement');
 
 subplot(3,1,1);
-plot(t, x, 'k');
+plot(t, x, 'y');
 grid on;
 xlabel('Time (s)');
 ylabel('Displacement (mm)');
@@ -616,7 +616,7 @@ hold on;
 
 % Overlay the clean reference and both filtered outputs.
 % k = black, b = blue, r = red.
-plot(t, x, 'k', t, yMA, 'b', t, yRecursive, 'r');
+plot(t, x, 'y', t, yMA, 'b', t, yRecursive, 'r');
 
 grid on;
 xlabel('Time (s)');
@@ -632,7 +632,7 @@ legend('Noisy input', 'Clean reference', ...
 subplot(2, 1, 2);
 
 % Plot the reference and filtered signals with slightly thicker lines.
-plot(t, x, 'k', t, yMA, 'b', t, yRecursive, 'r', 'LineWidth', 1.1);
+plot(t, x, 'y', t, yMA, 'b', t, yRecursive, 'r', 'LineWidth', 1.1);
 
 grid on;
 
